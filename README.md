@@ -1,11 +1,12 @@
-## RcppQuantuccia  [![Build Status](https://travis-ci.org/eddelbuettel/rcppquantuccia.svg)](https://travis-ci.org/eddelbuettel/rcppquantuccia) [![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/RcppQuantuccia)](https://cran.r-project.org/package=RcppQuantuccia) [![Downloads](http://cranlogs.r-pkg.org/badges/RcppQuantuccia?color=brightgreen)](http://www.r-pkg.org/pkg/RcppQuantuccia)
+## RcppQuantuccia  [![Build Status](https://travis-ci.org/eddelbuettel/rcppquantuccia.svg)](https://travis-ci.org/eddelbuettel/rcppquantuccia) [![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](https://www.r-pkg.org/badges/version/RcppQuantuccia)](https://cran.r-project.org/package=RcppQuantuccia) [![Dependencies](https://tinyverse.netlify.com/badge/RcppQuantuccia)](https://cran.r-project.org/package=RcppQuantuccia) [![Downloads](https://cranlogs.r-pkg.org/badges/RcppQuantuccia?color=brightgreen)](https://www.r-pkg.org/pkg/RcppQuantuccia)
+
 
 ### About
 
 [Quantuccia](https://github.com/pcaspers/Quantuccia) is the _"little sister"_ of
 [QuantLib](https://github.com/lballabio/quantlib): A header-only subset of which aims to provide the
 essential parts of [QuantLib](https://github.com/lballabio/quantlib) while being easier to deploy
-requiring only [Boost](http://www.boost.org) headers besides itself.
+requiring only [Boost](https://www.boost.org) headers besides itself.
 
 Being header-only makes providing [Quantuccia](https://github.com/pcaspers/Quantuccia) for
 [R](https://www.r-project.org) a breeze as we can rely on the
@@ -36,6 +37,13 @@ R>
 
 This shows the difference between the default US settlement calendar and the NYSE calendar
 which we selected explicitly.
+
+### A Smaller Subset
+
+As of version 0.0.3, we exclude the 7.6 mb header file `sobolrsg.hpp`, and well as references to it
+including the model subdirectory using the Sobol-based Brownian Market Models.  This shrinks the
+resulting shared library from around 26 mb (!!) to 0.64 mb, and the (compressed) source tarball from
+1.6 mb to 0.24 mb.
 
 ### Status
 
