@@ -7,9 +7,6 @@
 
 //using namespace QuantLib;
 
-// default with Rcpp 0.12.14, supported since Rcpp 0.12.8
-#define RCPP_NEW_DATE_DATETIME_VECTORS 1
-
 #include <RcppCommon.h>
 
 namespace Rcpp {
@@ -65,6 +62,9 @@ namespace RcppQuantuccia {
                            txt == "UnitedStates/Settlement" ||
                            txt == "UnitedStates::Settlement") {
                     p_cal.reset(new ql::UnitedStates(ql::UnitedStates::Settlement));
+                } else if (txt == "UnitedStates/LiborImpact" ||
+                           txt == "UnitedStates::LiborImpact") {
+                    p_cal.reset(new ql::UnitedStates(QuantLib::UnitedStates::LiborImpact));
                 } else if (txt == "UnitedStates/NYSE" ||
                            txt == "UnitedStates::NYSE") {
                     p_cal.reset(new ql::UnitedStates(QuantLib::UnitedStates::NYSE));
@@ -74,6 +74,9 @@ namespace RcppQuantuccia {
                 } else if (txt == "UnitedStates/NERC" ||
                            txt == "UnitedStates::NERC") {
                     p_cal.reset(new ql::UnitedStates(ql::UnitedStates::NERC));
+                } else if (txt == "UnitedStates/FederalReserve" ||
+                           txt == "UnitedStates::FederalReserve") {
+                    p_cal.reset(new ql::UnitedStates(ql::UnitedStates::FederalReserve));
 
                 } else if (txt == "UnitedKingdom" ||
                            txt == "UnitedKingdom/Settlement" ||
@@ -121,6 +124,11 @@ namespace RcppQuantuccia {
                 } else if (txt == "Canada/TSX" ||
                            txt == "Canada::TSX") {
                     p_cal.reset(new ql::Canada(ql::Canada::TSX));
+
+                } else if (txt == "Null" ||
+                           txt == "null" ||
+                           txt == "NULL") {
+                    p_cal.reset(new ql::NullCalendar());
 
                 } else {        // fallback
                     Rcpp::warning("Unrecognised calendar '%s' using fallback 'TARGET'", txt);
