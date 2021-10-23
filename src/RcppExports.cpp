@@ -9,6 +9,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // setCalendar
 void setCalendar(std::string calstr);
 static SEXP _RcppQuantuccia_setCalendar_try(SEXP calstrSEXP) {
@@ -28,6 +33,10 @@ RcppExport SEXP _RcppQuantuccia_setCalendar(SEXP calstrSEXP) {
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -60,6 +69,10 @@ RcppExport SEXP _RcppQuantuccia_advanceDate(SEXP rdSEXP, SEXP daysSEXP) {
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -89,6 +102,10 @@ RcppExport SEXP _RcppQuantuccia_isBusinessDay(SEXP datesSEXP) {
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -120,6 +137,10 @@ RcppExport SEXP _RcppQuantuccia_isHoliday(SEXP datesSEXP) {
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -149,6 +170,10 @@ RcppExport SEXP _RcppQuantuccia_isWeekend(SEXP datesSEXP) {
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -180,6 +205,10 @@ RcppExport SEXP _RcppQuantuccia_isEndOfMonth(SEXP datesSEXP) {
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -209,6 +238,10 @@ RcppExport SEXP _RcppQuantuccia_getEndOfMonth(SEXP datesSEXP) {
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -240,6 +273,10 @@ RcppExport SEXP _RcppQuantuccia_adjust_cpp(SEXP datesSEXP, SEXP bdcSEXP) {
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -275,6 +312,10 @@ RcppExport SEXP _RcppQuantuccia_advanceUnits_cpp(SEXP datesSEXP, SEXP nSEXP, SEX
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -308,6 +349,10 @@ RcppExport SEXP _RcppQuantuccia_businessDaysBetween(SEXP fromSEXP, SEXP toSEXP, 
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -340,6 +385,45 @@ RcppExport SEXP _RcppQuantuccia_getHolidays(SEXP fromSEXP, SEXP toSEXP, SEXP inc
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// getBusinessDays
+Rcpp::DateVector getBusinessDays(Rcpp::Date from, Rcpp::Date to);
+static SEXP _RcppQuantuccia_getBusinessDays_try(SEXP fromSEXP, SEXP toSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Rcpp::Date >::type from(fromSEXP);
+    Rcpp::traits::input_parameter< Rcpp::Date >::type to(toSEXP);
+    rcpp_result_gen = Rcpp::wrap(getBusinessDays(from, to));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _RcppQuantuccia_getBusinessDays(SEXP fromSEXP, SEXP toSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_RcppQuantuccia_getBusinessDays_try(fromSEXP, toSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -365,6 +449,7 @@ static int _RcppQuantuccia_RcppExport_validate(const char* sig) {
         signatures.insert("Rcpp::DateVector(*advanceUnits_cpp)(Rcpp::DateVector,int,int,int,bool)");
         signatures.insert("Rcpp::NumericVector(*businessDaysBetween)(Rcpp::DateVector,Rcpp::DateVector,bool,bool)");
         signatures.insert("Rcpp::DateVector(*getHolidays)(Rcpp::Date,Rcpp::Date,bool)");
+        signatures.insert("Rcpp::DateVector(*getBusinessDays)(Rcpp::Date,Rcpp::Date)");
     }
     return signatures.find(sig) != signatures.end();
 }
@@ -382,6 +467,7 @@ RcppExport SEXP _RcppQuantuccia_RcppExport_registerCCallable() {
     R_RegisterCCallable("RcppQuantuccia", "_RcppQuantuccia_advanceUnits_cpp", (DL_FUNC)_RcppQuantuccia_advanceUnits_cpp_try);
     R_RegisterCCallable("RcppQuantuccia", "_RcppQuantuccia_businessDaysBetween", (DL_FUNC)_RcppQuantuccia_businessDaysBetween_try);
     R_RegisterCCallable("RcppQuantuccia", "_RcppQuantuccia_getHolidays", (DL_FUNC)_RcppQuantuccia_getHolidays_try);
+    R_RegisterCCallable("RcppQuantuccia", "_RcppQuantuccia_getBusinessDays", (DL_FUNC)_RcppQuantuccia_getBusinessDays_try);
     R_RegisterCCallable("RcppQuantuccia", "_RcppQuantuccia_RcppExport_validate", (DL_FUNC)_RcppQuantuccia_RcppExport_validate);
     return R_NilValue;
 }
@@ -398,6 +484,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RcppQuantuccia_advanceUnits_cpp", (DL_FUNC) &_RcppQuantuccia_advanceUnits_cpp, 5},
     {"_RcppQuantuccia_businessDaysBetween", (DL_FUNC) &_RcppQuantuccia_businessDaysBetween, 4},
     {"_RcppQuantuccia_getHolidays", (DL_FUNC) &_RcppQuantuccia_getHolidays, 3},
+    {"_RcppQuantuccia_getBusinessDays", (DL_FUNC) &_RcppQuantuccia_getBusinessDays, 2},
     {"_RcppQuantuccia_RcppExport_registerCCallable", (DL_FUNC) &_RcppQuantuccia_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
