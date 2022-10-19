@@ -1,3 +1,22 @@
+2022-10-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.1.1
+
+	* R/init.R (.onAttach): Advertise 'qlcal' as alternative
+
+2022-10-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/ql/time/calendars/argentina.hpp: Set to utf-8 for clang++-15
+	* src/ql/time/calendars/argentina.cpp: Idem
+
+2021-11-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Date, Version): Roll minor version and date
+
+	* src/calendars.cpp: Factored out from header file
+	* inst/include/RcppQuantuccia_types.h: Idem
+	* src/Makevars: Idem
+
 2021-10-30  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.1.0
