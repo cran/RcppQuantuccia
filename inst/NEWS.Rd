@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppquantuccia/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppquantuccia/issues/#1}{##1}}
 
+\section{Changes in version 0.1.2 (2023-11-29)}{
+  \itemize{
+    \item \code{RcppExports.cpp} has been regenerated under an updated
+    \pkg{Rcpp} to address a format string warning under R-devel
+  }
+}
+
 \section{Changes in version 0.1.1 (2022-10-19)}{
   \itemize{
     \item Minor code reorganization splitting off \code{calendars.cpp}
