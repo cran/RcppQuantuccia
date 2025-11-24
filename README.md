@@ -1,9 +1,9 @@
 ## RcppQuantuccia: Rcpp bindings for QuantLib Calendering
 
 [![CI](https://github.com/eddelbuettel/rcppquantuccia/workflows/ci/badge.svg)](https://github.com/eddelbuettel/rcppquantuccia/actions?query=workflow%3Aci)
-[![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](https://www.r-project.org/Licenses/GPL-2)
 [![CRAN](https://www.r-pkg.org/badges/version/RcppQuantuccia)](https://cran.r-project.org/package=RcppQuantuccia)
-[![Dependencies](https://tinyverse.netlify.com/badge/RcppQuantuccia)](https://cran.r-project.org/package=RcppQuantuccia)
+[![Dependencies](https://tinyverse.netlify.app/badge/RcppQuantuccia)](https://cran.r-project.org/package=RcppQuantuccia)
 [![Downloads](https://cranlogs.r-pkg.org/badges/RcppQuantuccia?color=brightgreen)](https://www.r-pkg.org/pkg/RcppQuantuccia)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppquantuccia)](https://github.com/eddelbuettel/rcppquantuccia)
 
@@ -11,10 +11,15 @@
 
 Access to current calendaring functions from QuantLib in an easy-to-build smaller package.
 
-As of release 0.1.0, all code is current to the current QuantLib release 1.24 (modulo a [small patch set](https://github.com/eddelbuettel/rcppquantuccia/blob/master/local/changes_from_quantlib_1.24.diff)). All of
-the upstream, _i.e._ QuantLib, calendars are implemented as are the key access functions.
+As of release 0.1.0, all code is current to the current QuantLib release 1.24 (modulo a [small patch
+set](https://github.com/eddelbuettel/rcppquantuccia/blob/master/local/changes_from_quantlib_1.24.diff)). All
+of the upstream, _i.e._ QuantLib, calendars are implemented as are the key access functions.
 
-However, as [Quantuccia](https://github.com/pcaspers/Quantuccia) upstream is stale, we now *continue all future work in the [qlcal](https://github.com/qlcal) organization on GitHub and its [qlcal-r](https://github.com/qlcal/qlcal-r) repo* with the [qlcal R package](https://cran.r-project.org/package=qlcal) now also on CRAN.  So this repository here will likely **not** see any future work.
+However, as [Quantuccia](https://github.com/pcaspers/Quantuccia) upstream is stale, we now *continue
+all future work in the [qlcal](https://github.com/qlcal) organization on GitHub and its
+[qlcal-r](https://github.com/qlcal/qlcal-r) repo* with the [qlcal R
+package](https://cran.r-project.org/package=qlcal) now also on CRAN.  So this repository here will
+likely **not** see any future work.
 
 ### Brief History
 
